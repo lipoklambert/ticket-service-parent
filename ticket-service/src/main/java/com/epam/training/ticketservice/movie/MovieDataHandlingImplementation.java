@@ -2,7 +2,6 @@ package com.epam.training.ticketservice.movie;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 import java.util.Optional;
 
@@ -17,7 +16,6 @@ public class MovieDataHandlingImplementation implements MovieDataHandling {
     }
 
     @Override
-    @Transactional
     public void addMovie(String title, String genre, Long length) {
         Movie movie = new Movie();
         movie.setGenre(genre);
@@ -27,7 +25,6 @@ public class MovieDataHandlingImplementation implements MovieDataHandling {
     }
 
     @Override
-    @Transactional
     public void updateMovie(String title, String genre, Long length) {
         Optional<Movie> existingMovie = movieRepo.findByTitle(title);
         if (existingMovie.isPresent()) {
@@ -39,7 +36,6 @@ public class MovieDataHandlingImplementation implements MovieDataHandling {
     }
 
     @Override
-    @Transactional
     public void deleteMovie(String title) {
         movieRepo.deleteByTitle(title);
     }
