@@ -1,4 +1,4 @@
-package com.epam.training.ticketservice.hall;
+package com.epam.training.ticketservice.core.hall;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;

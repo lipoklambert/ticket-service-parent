@@ -1,4 +1,4 @@
-package com.epam.training.ticketservice.movie;
+package com.epam.training.ticketservice.core.movie;
 
 import lombok.Getter;
 import lombok.Setter;

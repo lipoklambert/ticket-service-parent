@@ -1,4 +1,4 @@
-package com.epam.training.ticketservice.movie;
+package com.epam.training.ticketservice.core.movie;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -45,4 +45,19 @@ public class MovieDataHandlingImplementation implements MovieDataHandling {
         return movieRepo.findAll();
     }
 
+    @Override
+    public Optional<Movie> getExistingMovieByTitle(String title) {
+        return movieRepo.findByTitle(title);
+    }
+
+    @Override
+    public long getLengthInMinutes(String title) {
+        Optional<Movie> movieTemp = movieRepo.findByTitle(title);
+
+        if (movieTemp.isPresent()) {
+            Movie movie = movieTemp.get();
+            return movie.getLength();
+        }
+        return -1L;
+    }
 }

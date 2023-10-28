@@ -1,11 +1,11 @@
-package com.epam.training.ticketservice.commands;
+package com.epam.training.ticketservice.ui.commands;
 
-import com.epam.training.ticketservice.movie.MovieDataHandling;
+import com.epam.training.ticketservice.core.movie.MovieDataHandling;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.shell.standard.ShellComponent;
 import org.springframework.shell.standard.ShellMethod;
 import org.springframework.shell.standard.ShellMethodAvailability;
-import com.epam.training.ticketservice.movie.Movie;
+import com.epam.training.ticketservice.core.movie.Movie;
 import java.util.List;
 
 @ShellComponent

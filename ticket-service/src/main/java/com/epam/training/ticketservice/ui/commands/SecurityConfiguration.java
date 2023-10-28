@@ -1,4 +1,4 @@
-package com.epam.training.ticketservice.commands;
+package com.epam.training.ticketservice.ui.commands;
 
 import org.jline.utils.AttributedString;
 import org.springframework.context.annotation.Primary;

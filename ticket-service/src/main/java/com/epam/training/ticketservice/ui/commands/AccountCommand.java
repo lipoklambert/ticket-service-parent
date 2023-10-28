@@ -1,4 +1,4 @@
-package com.epam.training.ticketservice.commands;
+package com.epam.training.ticketservice.ui.commands;
 
 import org.springframework.shell.standard.ShellComponent;
 import org.springframework.shell.standard.ShellMethod;

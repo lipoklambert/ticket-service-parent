@@ -1,4 +1,4 @@
-package com.epam.training.ticketservice.movie;
+package com.epam.training.ticketservice.core.movie;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;

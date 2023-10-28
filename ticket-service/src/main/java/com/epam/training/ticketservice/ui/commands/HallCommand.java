@@ -1,7 +1,7 @@
-package com.epam.training.ticketservice.commands;
+package com.epam.training.ticketservice.ui.commands;
 
-import com.epam.training.ticketservice.hall.Hall;
-import com.epam.training.ticketservice.hall.HallDataHandling;
+import com.epam.training.ticketservice.core.hall.Hall;
+import com.epam.training.ticketservice.core.hall.HallDataHandling;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.shell.standard.ShellComponent;
 import org.springframework.shell.standard.ShellMethod;

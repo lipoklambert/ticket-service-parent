@@ -7,4 +7,5 @@
 *.iml
 *.ipr
 
+*.log
 spring-shell.log

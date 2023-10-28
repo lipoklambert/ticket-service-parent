@@ -1,4 +1,4 @@
-package com.epam.training.ticketservice.hall;
+package com.epam.training.ticketservice.core.hall;
 
 
 import lombok.Getter;

@@ -1,4 +1,4 @@
-package com.epam.training.ticketservice.hall;
+package com.epam.training.ticketservice.core.hall;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -46,6 +46,11 @@ public class HallDataHandlingImplementation implements HallDataHandling{
     @Override
     public List<Hall> listCinemaHalls() {
         return hallRepo.findAll();
+    }
+
+    @Override
+    public Optional<Hall> getCinemaHallByName(String name) {
+        return hallRepo.findByName(name);
     }
 
 }
