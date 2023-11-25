@@ -11,18 +11,16 @@
 
     <parent>
         <groupId>org.springframework.boot</groupId>
-        <version>2.5.6</version>
         <artifactId>spring-boot-starter-parent</artifactId>
+        <!-- DO NOT MODIFY THIS VERSION! -->
+        <version>2.7.17</version>
     </parent>
 
     <properties>
-        <maven.compiler.target>17</maven.compiler.target>
-        <maven.compiler.source>17</maven.compiler.source>
+        <java.version>17</java.version>
     </properties>
 
     <modules>
-        <module>ticket-service</module>
-        <module>ticket-service-acceptance-tests</module>
         <module>ticket-service</module>
         <module>ticket-service-acceptance-tests</module>
     </modules>
