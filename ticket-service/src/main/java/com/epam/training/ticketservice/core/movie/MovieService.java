@@ -5,9 +5,8 @@ import java.util.Optional;
 
 public interface MovieService {
 
-    void addMovie(String title, String genre, Long length);
-
-    void updateMovie(String title, String genre, Long length);
+    void addMovie(MovieDTO movieDTO);
+    void updateMovie(MovieDTO movieDTO);
 
     void deleteMovie(String title);
 

@@ -18,22 +18,22 @@ public class RoomServiceImplementation implements RoomService {
     }
 
     @Override
-    public void createRoom(String name, Long seatRows, Long seatColumns) {
+    public void createRoom(RoomDTO roomDto) {
         Room room = new Room();
-        room.setName(name);
-        room.setSeatColumns(seatColumns);
-        room.setSeatRows(seatRows);
+        room.setName(roomDto.getName());
+        room.setSeatColumns(roomDto.getSeatColumns());
+        room.setSeatRows(roomDto.getSeatRows());
         roomRepo.save(room);
     }
 
     @Override
-    public void updateRoom(String name, Long seatRows, Long seatColumns) {
-        Optional<Room> existingHall = roomRepo.findByName(name);
+    public void updateRoom(RoomDTO roomDto) {
+        Optional<Room> existingHall = roomRepo.findByName(roomDto.getName());
 
         if (existingHall.isPresent()) {
             Room updatedRoom = existingHall.get();
-            updatedRoom.setSeatColumns(seatColumns);
-            updatedRoom.setSeatRows(seatRows);
+            updatedRoom.setSeatColumns(roomDto.getSeatColumns());
+            updatedRoom.setSeatRows(roomDto.getSeatRows());
             roomRepo.save(updatedRoom);
         }
     }

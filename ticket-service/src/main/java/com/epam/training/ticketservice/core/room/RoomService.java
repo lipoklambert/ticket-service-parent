@@ -5,9 +5,9 @@ import java.util.Optional;
 
 public interface RoomService {
 
-    void createRoom(String name, Long seatRows, Long seatColumns);
+    void createRoom(RoomDTO roomDto);
 
-    void updateRoom(String name, Long seatRows, Long seatColumns);
+    void updateRoom(RoomDTO roomDto);
 
     void deleteRoom(String title);
 

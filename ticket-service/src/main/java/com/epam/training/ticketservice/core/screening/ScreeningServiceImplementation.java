@@ -18,8 +18,10 @@ public class ScreeningServiceImplementation implements ScreeningService {
     }
 
     @Override
-    public void addScreening(String movieTitle, String roomName, LocalDateTime screeningDateTime) {
-        Screening screening = new Screening(movieTitle, roomName, screeningDateTime);
+    public void addScreening(ScreeningDTO screeningDTO) {
+        Screening screening = new Screening(screeningDTO.getMovie().getTitle(), screeningDTO.getRoom().getName(),
+                screeningDTO.getScreeningDate());
+
         screeningRepo.save(screening);
     }
 

@@ -1,6 +1,7 @@
 package com.epam.training.ticketservice.ui.commands;
 
 import com.epam.training.ticketservice.core.room.Room;
+import com.epam.training.ticketservice.core.room.RoomDTO;
 import com.epam.training.ticketservice.core.room.RoomService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.shell.standard.ShellComponent;
@@ -23,14 +24,16 @@ public class RoomCommand extends SecurityConfiguration {
     @ShellMethodAvailability("isAdmin")
     @ShellMethod(key = "create room", value = "Creates new room in the Database")
     public String createNewRoom(String name, Long rows, Long columns) {
-        roomService.createRoom(name, rows, columns);
+        RoomDTO roomDto = new RoomDTO(name, rows, columns);
+        roomService.createRoom(roomDto);
         return "Room created";
     }
 
     @ShellMethodAvailability("isAdmin")
     @ShellMethod(key = "update room", value = "Updates an existing room in the Database")
     public String updateRoom(String name, Long rows, Long columns) {
-        roomService.updateRoom(name, rows, columns);
+        RoomDTO roomDto = new RoomDTO(name, rows, columns);
+        roomService.updateRoom(roomDto);
         return "Room updated";
     }
 

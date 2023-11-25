@@ -6,7 +6,7 @@ import java.util.Optional;
 
 public interface ScreeningService {
 
-    void addScreening(String movieTitle, String roomName, LocalDateTime screeningDateTime);
+    void addScreening(ScreeningDTO screeningDTO);
 
     void deleteScreening(String movieTitle, String roomName, LocalDateTime screeningDateTime);
 

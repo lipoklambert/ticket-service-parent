@@ -5,6 +5,7 @@ import com.epam.training.ticketservice.core.room.RoomService;
 import com.epam.training.ticketservice.core.movie.Movie;
 import com.epam.training.ticketservice.core.movie.MovieService;
 import com.epam.training.ticketservice.core.screening.Screening;
+import com.epam.training.ticketservice.core.screening.ScreeningDTO;
 import com.epam.training.ticketservice.core.screening.ScreeningService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.shell.standard.ShellComponent;
@@ -58,11 +59,12 @@ public class ScreeningCommand {
                 }
             }
 
-            screeningService.addScreening(movieTitle, roomName, screeningTime);
+            ScreeningDTO screeningDTO = new ScreeningDTO(movie.get(), room.get(), screeningTime);
+            screeningService.addScreening(screeningDTO);
 
             return "Screening saved.";
         }
-        return "Fill out the required fields, please.";
+        return "Saving unsuccessful!";
     }
 
     @ShellMethod(key = "list screenings", value = "Lists all screenings.")
@@ -94,6 +96,6 @@ public class ScreeningCommand {
 
         screeningService.deleteScreening(movieTitle, roomName, screeningTime);
 
-        return "If the screening existed, it was deleted";
+        return "Screening deleted";
     }
 }
