@@ -6,12 +6,12 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class MovieDataHandlingImplementation implements MovieDataHandling {
+public class MovieServiceImplementation implements MovieService {
 
     private final MovieRepo movieRepo;
 
     @Autowired
-    public MovieDataHandlingImplementation(MovieRepo movieRepo) {
+    public MovieServiceImplementation(MovieRepo movieRepo) {
         this.movieRepo = movieRepo;
     }
 

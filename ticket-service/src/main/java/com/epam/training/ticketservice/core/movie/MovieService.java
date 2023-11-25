@@ -3,7 +3,7 @@ package com.epam.training.ticketservice.core.movie;
 import java.util.List;
 import java.util.Optional;
 
-public interface MovieDataHandling {
+public interface MovieService {
 
     void addMovie(String title, String genre, Long length);
 

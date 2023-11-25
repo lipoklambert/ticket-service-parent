@@ -1,4 +1,4 @@
-package com.epam.training.ticketservice.core.hall;
+package com.epam.training.ticketservice.core.room;
 
 
 import lombok.Getter;
@@ -11,7 +11,7 @@ import javax.persistence.Id;
 @Setter
 @NoArgsConstructor
 @Entity
-public class Hall {
+public class Room {
 
     @Id
     private String name;

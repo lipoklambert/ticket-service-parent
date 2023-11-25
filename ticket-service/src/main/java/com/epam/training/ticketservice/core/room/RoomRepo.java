@@ -1,4 +1,4 @@
-package com.epam.training.ticketservice.core.hall;
+package com.epam.training.ticketservice.core.room;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
@@ -8,12 +8,12 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface HallRepo extends JpaRepository<Hall, Long> {
+public interface RoomRepo extends JpaRepository<Room, Long> {
 
     @Modifying
     @Transactional
-    List<Hall> deleteByName(String name);
+    List<Room> deleteByName(String name);
 
-    Optional<Hall> findByName(String name);
+    Optional<Room> findByName(String name);
 
 }

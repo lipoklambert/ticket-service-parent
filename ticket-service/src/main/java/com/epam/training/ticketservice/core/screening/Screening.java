@@ -1,4 +1,4 @@
-package com.epam.training.ticketservice.core.projection;
+package com.epam.training.ticketservice.core.screening;
 
 import lombok.Generated;
 import lombok.Getter;
@@ -17,19 +17,19 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Entity
 @Generated
-public class Projection {
+public class Screening {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String movieTitle;
     private String roomName;
-    private LocalDateTime projectionDate;
+    private LocalDateTime screeningDate;
 
-    public Projection(String movieTitle, String roomName, LocalDateTime projectionDateTime) {
+    public Screening(String movieTitle, String roomName, LocalDateTime screeningDateTime) {
         this.movieTitle = movieTitle;
         this.roomName = roomName;
-        this.projectionDate = projectionDateTime;
+        this.screeningDate = screeningDateTime;
     }
 
 }
