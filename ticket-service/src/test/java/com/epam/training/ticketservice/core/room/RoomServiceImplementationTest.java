@@ -28,7 +28,7 @@ class RoomServiceImplementationTest {
 
     @Test
     void createRoom_ShouldSaveRoom() {
-        RoomDTO roomDTO = new RoomDTO("Room1", 5L, 5L);
+        RoomDto roomDTO = new RoomDto("Room1", 5L, 5L);
 
         roomService.createRoom(roomDTO);
 
@@ -40,7 +40,7 @@ class RoomServiceImplementationTest {
 
     @Test
     void updateRoom_WithExistingRoom_ShouldUpdateRoom() {
-        RoomDTO roomDTO = new RoomDTO("Room1", 7L, 7L);
+        RoomDto roomDTO = new RoomDto("Room1", 7L, 7L);
         Room existingRoom = new Room("Room1", 5L, 5L);
 
         when(roomRepo.findByName("Room1")).thenReturn(Optional.of(existingRoom));
@@ -55,7 +55,7 @@ class RoomServiceImplementationTest {
 
     @Test
     void updateRoom_WithNonExistingRoom_ShouldNotUpdateRoom() {
-        RoomDTO roomDTO = new RoomDTO("NonExistingRoom", 7L, 7L);
+        RoomDto roomDTO = new RoomDto("NonExistingRoom", 7L, 7L);
 
         when(roomRepo.findByName("NonExistingRoom")).thenReturn(Optional.empty());
 

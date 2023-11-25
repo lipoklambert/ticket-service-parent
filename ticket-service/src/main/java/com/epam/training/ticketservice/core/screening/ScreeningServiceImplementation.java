@@ -18,9 +18,9 @@ public class ScreeningServiceImplementation implements ScreeningService {
     }
 
     @Override
-    public void addScreening(ScreeningDTO screeningDTO) {
-        Screening screening = new Screening(screeningDTO.getMovie().getTitle(), screeningDTO.getRoom().getName(),
-                screeningDTO.getScreeningDate());
+    public void addScreening(ScreeningDto screeningDto) {
+        Screening screening = new Screening(screeningDto.getMovie().getTitle(), screeningDto.getRoom().getName(),
+                screeningDto.getScreeningDate());
 
         screeningRepo.save(screening);
     }
@@ -59,7 +59,8 @@ public class ScreeningServiceImplementation implements ScreeningService {
     }
 
     @Override
-    public Optional<Screening> getScreeningByTitleRoomAndDateTime(String movieTitle, String roomName, LocalDateTime screeningDateTime) {
+    public Optional<Screening> getScreeningByTitleRoomAndDateTime(String movieTitle, String roomName,
+                                                                  LocalDateTime screeningDateTime) {
         return screeningRepo.findByMovieTitleAndRoomNameAndScreeningDate(movieTitle, roomName, screeningDateTime);
     }
 

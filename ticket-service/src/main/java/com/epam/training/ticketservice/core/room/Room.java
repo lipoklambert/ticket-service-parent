@@ -24,6 +24,10 @@ public class Room {
         this.seatColumns = seatColumns;
     }
 
+    public Room(String name) {
+        this.name = name;
+    }
+
     @Override
     public String toString() {
         return "Room " + name + " with " + String.valueOf(seatRows * seatColumns) + " seats, " + seatRows.toString()

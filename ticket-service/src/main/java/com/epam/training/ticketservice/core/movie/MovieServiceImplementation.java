@@ -16,21 +16,21 @@ public class MovieServiceImplementation implements MovieService {
     }
 
     @Override
-    public void addMovie(MovieDTO movieDTO) {
+    public void addMovie(MovieDto movieDto) {
         Movie movie = new Movie();
-        movie.setTitle(movieDTO.getTitle());
-        movie.setGenre(movieDTO.getGenre());
-        movie.setLength(movieDTO.getLength());
+        movie.setTitle(movieDto.getTitle());
+        movie.setGenre(movieDto.getGenre());
+        movie.setLength(movieDto.getLength());
         movieRepo.save(movie);
     }
 
     @Override
-    public void updateMovie(MovieDTO movieDTO) {
-        Optional<Movie> existingMovie = movieRepo.findByTitle(movieDTO.getTitle());
+    public void updateMovie(MovieDto movieDto) {
+        Optional<Movie> existingMovie = movieRepo.findByTitle(movieDto.getTitle());
         if (existingMovie.isPresent()) {
             Movie movie = existingMovie.get();
-            movie.setGenre(movieDTO.getGenre());
-            movie.setLength(movieDTO.getLength());
+            movie.setGenre(movieDto.getGenre());
+            movie.setLength(movieDto.getLength());
             movieRepo.save(movie);
         }
     }

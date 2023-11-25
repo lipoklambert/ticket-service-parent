@@ -6,7 +6,7 @@ import java.util.Optional;
 
 public interface ScreeningService {
 
-    void addScreening(ScreeningDTO screeningDTO);
+    void addScreening(ScreeningDto screeningDto);
 
     void deleteScreening(String movieTitle, String roomName, LocalDateTime screeningDateTime);
 
@@ -18,7 +18,8 @@ public interface ScreeningService {
 
     Screening getScreeningById(Long id);
 
-    Optional<Screening> getScreeningByTitleRoomAndDateTime(String movieTitle, String roomName, LocalDateTime screeningDateTime);
+    Optional<Screening> getScreeningByTitleRoomAndDateTime(String movieTitle, String roomName,
+                                                           LocalDateTime screeningDateTime);
 
     List<Screening> getScreeningsInSameRoom(String roomName);
 }

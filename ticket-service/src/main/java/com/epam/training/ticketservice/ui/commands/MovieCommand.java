@@ -1,6 +1,6 @@
 package com.epam.training.ticketservice.ui.commands;
 
-import com.epam.training.ticketservice.core.movie.MovieDTO;
+import com.epam.training.ticketservice.core.movie.MovieDto;
 import com.epam.training.ticketservice.core.movie.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.shell.standard.ShellComponent;
@@ -22,16 +22,16 @@ public class MovieCommand extends SecurityConfiguration {
     @ShellMethod(key = "create movie", value = "Add the movie to the Database")
     @ShellMethodAvailability("isAdmin")
     public String addMovie(String title, String genre, Long length) {
-        MovieDTO movieDTO = new MovieDTO(title, genre, length);
-        movieService.addMovie(movieDTO);
+        MovieDto movieDto = new MovieDto(title, genre, length);
+        movieService.addMovie(movieDto);
         return "Movie created";
     }
 
     @ShellMethod(key = "update movie", value = "Update an existing movie's properties")
     @ShellMethodAvailability("isAdmin")
     public String updateMovie(String title, String genre, Long length) {
-        MovieDTO movieDTO = new MovieDTO(title, genre, length);
-        movieService.updateMovie(movieDTO);
+        MovieDto movieDto = new MovieDto(title, genre, length);
+        movieService.updateMovie(movieDto);
         return "Movie updated";
     }
 

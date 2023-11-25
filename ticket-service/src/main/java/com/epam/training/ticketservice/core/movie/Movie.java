@@ -23,6 +23,10 @@ public class Movie {
         this.length = length;
     }
 
+    public Movie(String title) {
+        this.title = title;
+    }
+
     @Override
     public String toString() {
         return (title + " (" + genre + ", " + length.toString() + " minutes)");

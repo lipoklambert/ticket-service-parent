@@ -29,7 +29,7 @@ class MovieServiceImplementationTest {
 
     @Test
     void testAddMovie() {
-        MovieDTO movieDTO = new MovieDTO("Test Movie", "Action", 120L);
+        MovieDto movieDTO = new MovieDto("Test Movie", "Action", 120L);
 
         movieService.addMovie(movieDTO);
 
@@ -38,7 +38,7 @@ class MovieServiceImplementationTest {
 
     @Test
     void testUpdateMovie() {
-        MovieDTO movieDTO = new MovieDTO("Test Movie", "Drama", 150L);
+        MovieDto movieDTO = new MovieDto("Test Movie", "Drama", 150L);
         Movie existingMovie = new Movie("Test Movie", "Action", 120L);
 
         when(movieRepo.findByTitle("Test Movie")).thenReturn(Optional.of(existingMovie));

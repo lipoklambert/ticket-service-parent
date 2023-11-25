@@ -81,5 +81,25 @@ public class MovieCommandTest {
         assertEquals("There are no movies at the moment", result.trim());
     }
 
+    @Test
+    void createMovie() {
+        assertEquals("Movie created", movieCommand.addMovie("joska", "asd", 123L));
+    }
+
+
+    @Test
+    void updateMovie() {
+        movieCommand.addMovie("joska", "asd", 123L);
+        assertEquals("Movie updated", movieCommand.updateMovie("joska", "asd", 124L));
+    }
+
+    @Test
+    void deleteMovie() {
+
+        movieCommand.addMovie("joska", "asd", 123L);
+        assertEquals("Movie deleted", movieCommand.deleteMovie("joska"));
+
+    }
+
 }
 

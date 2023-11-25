@@ -5,12 +5,12 @@ import com.epam.training.ticketservice.core.room.Room;
 
 import java.time.LocalDateTime;
 
-public class ScreeningDTO {
+public class ScreeningDto {
     private Movie movie;
     private Room room;
     private LocalDateTime screeningDate;
 
-    public ScreeningDTO(Movie movie, Room room, LocalDateTime screeningDate) {
+    public ScreeningDto(Movie movie, Room room, LocalDateTime screeningDate) {
         this.movie = movie;
         this.room = room;
         this.screeningDate = screeningDate;

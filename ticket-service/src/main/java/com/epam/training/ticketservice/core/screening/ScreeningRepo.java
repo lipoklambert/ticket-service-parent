@@ -14,9 +14,11 @@ public interface ScreeningRepo extends JpaRepository<Screening, Long> {
 
     @Modifying
     @Transactional
-    List<Screening> deleteByMovieTitleAndRoomNameAndScreeningDate(String movieTitle, String roomName, LocalDateTime screeningDateTime);
+    List<Screening> deleteByMovieTitleAndRoomNameAndScreeningDate(String movieTitle, String roomName,
+                                                                  LocalDateTime screeningDateTime);
 
-    Optional<Screening> findByMovieTitleAndRoomNameAndScreeningDate(String movieTitle, String roomName, LocalDateTime screeningDate);
+    Optional<Screening> findByMovieTitleAndRoomNameAndScreeningDate(String movieTitle, String roomName,
+                                                                    LocalDateTime screeningDate);
 
     List<Screening> findByRoomName(String roomName);
 }

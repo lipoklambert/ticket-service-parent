@@ -1,15 +1,15 @@
 package com.epam.training.ticketservice.core.movie;
 
-public class MovieDTO {
+public class MovieDto {
     private String title;
     private String genre;
     private Long length;
 
-    public MovieDTO() {
+    public MovieDto() {
         // Default constructor
     }
 
-    public MovieDTO(String title, String genre, Long length) {
+    public MovieDto(String title, String genre, Long length) {
         this.title = title;
         this.genre = genre;
         this.length = length;

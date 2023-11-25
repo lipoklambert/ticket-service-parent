@@ -5,7 +5,7 @@ import com.epam.training.ticketservice.core.room.RoomService;
 import com.epam.training.ticketservice.core.movie.Movie;
 import com.epam.training.ticketservice.core.movie.MovieService;
 import com.epam.training.ticketservice.core.screening.Screening;
-import com.epam.training.ticketservice.core.screening.ScreeningDTO;
+import com.epam.training.ticketservice.core.screening.ScreeningDto;
 import com.epam.training.ticketservice.core.screening.ScreeningService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.shell.standard.ShellComponent;
@@ -25,7 +25,8 @@ public class ScreeningCommand {
     private final RoomService roomService;
 
     @Autowired
-    public ScreeningCommand(ScreeningService screeningService, MovieService movieService, RoomService roomService) {
+    public ScreeningCommand(ScreeningService screeningService, MovieService movieService,
+                            RoomService roomService) {
         this.screeningService = screeningService;
         this.roomService = roomService;
         this.movieService = movieService;
@@ -38,7 +39,8 @@ public class ScreeningCommand {
         Optional<Room> room = roomService.getRoomByName(roomName);
 
         if (room.isPresent() && movie.isPresent()) {
-            LocalDateTime screeningTime = LocalDateTime.parse(screeningDate, DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));
+            LocalDateTime screeningTime = LocalDateTime.parse(screeningDate,
+                    DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));
 
             List<Screening> screeningsInSameRoom = screeningService.getScreeningsInSameRoom(roomName);
 
@@ -47,7 +49,8 @@ public class ScreeningCommand {
                 LocalDateTime existingScreeningEnd = existingScreeningStart
                         .plusMinutes(movieService.getLengthInMinutes(screening.getMovieTitle()));
 
-                if (screeningTime.isAfter(existingScreeningStart) && screeningTime.isBefore(existingScreeningEnd)) {
+                if (screeningTime.isAfter(existingScreeningStart) 
+                        && screeningTime.isBefore(existingScreeningEnd)) {
                     return "There is an overlapping screening";
                 }
 
@@ -59,8 +62,8 @@ public class ScreeningCommand {
                 }
             }
 
-            ScreeningDTO screeningDTO = new ScreeningDTO(movie.get(), room.get(), screeningTime);
-            screeningService.addScreening(screeningDTO);
+            ScreeningDto screeningDto = new ScreeningDto(movie.get(), room.get(), screeningTime);
+            screeningService.addScreening(screeningDto);
 
             return "Screening saved.";
         }
@@ -82,7 +85,8 @@ public class ScreeningCommand {
                 String formattedDateTime = screening.getScreeningDate().format(formatter);
                 stringToReturn +=
                         screening.getMovieTitle() + " (" + movie.get().getGenre() + ", " + movie.get().getLength()
-                                + " minutes), screened in room " + screening.getRoomName() + ", at " + formattedDateTime + "\n";
+                                + " minutes), screened in room " + screening.getRoomName()
+                                + ", at " + formattedDateTime + "\n";
             }
         }
         return stringToReturn;
